@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composer HTML Demo</title>
+    <!-- Load the composer javascript file -->
+    <script src="https://unpkg.com/@nylas/components-composer"></script>
+  </head>
+
+  <body>
+    <!-- Add composer to place where you prefer -->
+<nylas-composer id="41abca6e-bcb8-4e18-aaef-b506fd9b35ac" > </nylas-composer>
+
+    <script>
+      // Customize appearance (it will override what is set up on dashboard.nylas.com)
+      el.options = {
+        show_header: true,
+        show_subject: true,
+        theme: "dark",
+        show_editor_toolbar: false
+      };
+
+      // Modify behavior after sending
+      el.afterSendSuccess = async (response) => {
+        el.close(); // Hide the composer
+      };
+    </script>
+  </body>
+</html>
